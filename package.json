@@ -1,0 +1,26 @@
+{
+  "name": "loading-images",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexxmg/loading-images.git"
+  },
+  "author": "lexx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexxmg/loading-images/issues"
+  },
+  "homepage": "https://github.com/lexxmg/loading-images#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
