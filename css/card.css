@@ -11,3 +11,43 @@
 
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.19);
 }
+
+.card__input {
+  display: none;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+
+  padding: 0;
+
+  background-color: #fff;
+
+  border: 1px solid #42b883;
+  border-radius: 99px;
+
+  outline: none;
+
+  color: #42b883;
+
+  cursor: pointer;
+
+  transition: all .22s;
+}
+
+.btn.primary {
+  background-color: #42b883;
+
+  color: #fff;
+}
+
+.btn:active {
+  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  cursor: pointer;
+
+  opacity: .8;
+}

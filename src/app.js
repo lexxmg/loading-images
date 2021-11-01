@@ -1,6 +1,6 @@
 
 'use strict';
 
-import './upload';
+import { upload } from './upload';
 
-console.log('app.js');
+upload('.card__input');
