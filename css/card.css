@@ -16,6 +16,28 @@
   display: none;
 }
 
+.input__preview {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 -10px;
+  padding: 5px;
+}
+
+.input-preview {
+
+}
+
+.input-preview__img-wrwpper {
+  margin: 0 5px;
+}
+
+.input-preview__img {
+  display: block;
+
+  height: 140px;
+}
+
 .btn {
   width: 100px;
   height: 30px;
