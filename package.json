@@ -22,5 +22,8 @@
   "homepage": "https://github.com/lexxmg/loading-images#readme",
   "devDependencies": {
     "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "firebase": "^9.2.0"
   }
 }
