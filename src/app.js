@@ -3,7 +3,7 @@
 
 import { upload } from './upload';
 import { initializeApp } from "firebase/app";
-import { getStorage, ref, uploadBytes, getMetadata } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getMetadata, updateMetadata } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBCppba0e8Uql3bqhpDhEMZ3O8kButZ3JA",
@@ -34,8 +34,21 @@ upload('.card__input', {
       });
 
       getMetadata(spaceRef).then(metadata => {
-        console.log(metadata.size);
+        console.log({...metadata});
       });
+
+      const newMetadata = {
+        cacheControl: 'public,max-age=300',
+        contentType: 'image/jpeg'
+      };
+
+      updateMetadata(spaceRef, newMetadata)
+        .then((metadata) => {
+          console.log(metadata.size);
+          // Updated metadata for 'images/forest.jpg' is returned in the Promise
+        }).catch((error) => {
+          // Uh-oh, an error occurred!
+        });
     });
   }
 });
