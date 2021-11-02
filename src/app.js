@@ -24,31 +24,34 @@ const storage = getStorage();
 upload('.card__input', {
   multi: true,
   accept: ['.gif', '.jpg'],
-  onUpload(files) {
-    files.forEach((item, i) => {
-      const spaceRef = ref(storage, `images/${item.name}`);
-
-      uploadBytes(spaceRef, item).then((snapshot) => {
-        console.log(snapshot);
-        console.log('Uploaded a blob or file!');
-      });
-
-      getMetadata(spaceRef).then(metadata => {
-        console.log({...metadata});
-      });
-
-      const newMetadata = {
-        cacheControl: 'public,max-age=300',
-        contentType: 'image/jpeg'
-      };
-
-      updateMetadata(spaceRef, newMetadata)
-        .then((metadata) => {
-          console.log(metadata.size);
-          // Updated metadata for 'images/forest.jpg' is returned in the Promise
-        }).catch((error) => {
-          // Uh-oh, an error occurred!
-        });
-    });
-  }
+  onUpload
 });
+
+
+function onUpload(files) {
+  files.forEach((item, i) => {
+    const spaceRef = ref(storage, `images/${item.name}`);
+
+    uploadBytes(spaceRef, item).then((snapshot) => {
+      console.log(snapshot);
+      console.log('Uploaded a blob or file!');
+    });
+
+    getMetadata(spaceRef).then(metadata => {
+      console.log({...metadata});
+    });
+
+    const newMetadata = {
+      cacheControl: 'public,max-age=300',
+      contentType: 'image/jpeg'
+    };
+
+    updateMetadata(spaceRef, newMetadata)
+      .then((metadata) => {
+        console.log(metadata.size);
+        // Updated metadata for 'images/forest.jpg' is returned in the Promise
+      }).catch((error) => {
+        // Uh-oh, an error occurred!
+      });
+  });
+}
